@@ -1,7 +1,7 @@
 const {SlashCommandBuilder, EmbedBuilder} = require("discord.js")
 
 module.exports = {
-	catagory: "Overig",
+	catagory: "Misc",
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Replies with Pong!')    .setDMPermission(false)
