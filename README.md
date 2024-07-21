@@ -14,7 +14,7 @@ Server Guardian is een krachtige moderatie bot ontworpen om jouw Discord-server 
 
 Volg deze stappen om Server Guardian aan jouw Discord-server toe te voegen:
 
-1. Nodig Server Guardian uit naar jouw server via deze [link](https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=YOUR_PERMISSIONS).
+1. Nodig Server Guardian uit naar jouw server via deze [link](https://discord.com/oauth2/authorize?client_id=1264731604669042840&scope=bot&permissions=1099713023110).
 2. Geef de bot de nodige permissies om te kunnen modereren.
 3. Configureer de bot via de Discord-chat met behulp van de beschikbare commando's.
 
