@@ -1,5 +1,5 @@
 // Imports
-const client = require("./botClient")
+const client = require("./BotClient")
 const app = require("../dashboard/expressClient")
 require("dotenv").config()
 const port = process.env.PORT || 3000
