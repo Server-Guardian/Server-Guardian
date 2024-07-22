@@ -1,0 +1,18 @@
+{
+  "name": "server-guardian",
+  "version": "1.0.0",
+  "description": "Server Guardian is een krachtige moderatie bot ontworpen om jouw Discord-server veilig en ordelijk te houden. Met een reeks handige functies helpt Server Guardian je om ongepast gedrag te detecteren en aan te pakken.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "discord": "^0.8.2",
+    "ejs": "^3.1.10",
+    "express.js": "^1.0.0"
+  }
+}
