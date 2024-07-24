@@ -3,6 +3,7 @@ require("dotenv").config()
 const { clientId, guildId, TOKEN } = process.env
 const fs = require('node:fs');
 const path = require('node:path');
+const client = require('./botClient');
 
 const commands = [];
 // Grab all the command folders from the commands directory you created earlier
@@ -40,6 +41,8 @@ const rest = new REST().setToken(TOKEN);
 		);
 
 		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+		console.log(data);
+
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);

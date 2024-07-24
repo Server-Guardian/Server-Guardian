@@ -37,6 +37,7 @@ module.exports = {
                 reason = interaction.fields.getTextInputValue('warnReason');
                 // Voeg hier de logica voor waarschuwing toe
                 await interaction.reply(`Gebruiker ${user.displayName} gewaarschuwd met reden: ${reason}`);
+             
             } else if (action === 'kick') {
                 reason = interaction.fields.getTextInputValue('kickReason');
                 // Voeg hier de logica voor kick toe

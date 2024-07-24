@@ -14,11 +14,13 @@ async function execute(interaction) {
     const command = interaction.client.commands.get(interaction.commandName);
 
     if (!command) {
-        return;
+        console.log(interaction.client.commands);
+        return console.log("Test")
     }
 
     try {
         await command.execute(interaction.client, interaction);
+        console.log(command, "gestard");
     } catch (error) {
         e.addFields({ name: "Error", value: `${error}` })
         console.log(error);
