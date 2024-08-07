@@ -18,8 +18,7 @@ query.query("SELECT * FROM setups WHERE Guildid = ?", [message.guild.id], async 
                 return;
             }
             let db = results
-            console.log(`Resu: ${Object(results)}`);
-            
+                        
         const linkDetectorRole = db.Soort === 'support_role' ? db.Waarde : null;
         const linkDetectorStatus = db.Soort === 'linkdetector_status' ? db.Waarde : null;
         const logChannelId = db.Soort === 'logchannel' ? db.Waarde : db.Waarde
