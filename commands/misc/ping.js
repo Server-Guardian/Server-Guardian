@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, Client, ChatInputCommandInteraction } = require("discord.js");
+const { SlashCommandBuilder, Client, ChatInputCommandInteraction, EmbedBuilder } = require("discord.js");
 
 const command = new SlashCommandBuilder()
 	.setName('ping')

@@ -24,7 +24,7 @@ module.exports = {
 			const randomActivity = activities[Math.floor(Math.random() * activities.length)];
 			client.user.setActivity(randomActivity.name, { type: randomActivity.type });
 		}
-		client.user.setPresence({activites: [{name: 'MONSTERGANG'}], status: "online"})
+		client.user.setPresence({activites: [{name: 'Server_Guardian'}], status: "dnd"})
 
 		// Stel de activiteit in wanneer de bot voor het eerst online komt
 		setRandomActivity();

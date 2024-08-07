@@ -1,10 +1,9 @@
 const {Collection} = require("discord.js")
-const client = require("../botClient")
 const fs = require("fs")
 const path = require('node:path')
-client.commands = new Collection();
 
-async function loadCommands() {
+async function loadCommands(client) {
+    client.commands = new Collection();
     const foldersPath = path.join(__dirname, '../../commands');
     const commandFolders = fs.readdirSync(foldersPath);
     const commandsloaded = []

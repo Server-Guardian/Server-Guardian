@@ -26,10 +26,15 @@ module.exports = {
                 }
             }
         } else if (interaction.type === InteractionType.ModalSubmit) {
-        const [action, messageId] = interaction.customId.split('-');
+            if (!["warn", "ban", "kick"].some(prefix => interaction.customId.startsWith(prefix))) return;
+
+            const [action, messageId] = interaction.customId.split('-');
         console.log(userActions);
         console.log(interaction.customId);
             const userData = userActions.get(`${action}-${messageId}`);
+            if (userData) {
+                return
+            }
             const user = await interaction.guild.members.fetch(userData.userId);
             let reason;
 

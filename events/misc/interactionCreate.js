@@ -6,7 +6,6 @@ const { Events, EmbedBuilder, ChatInputCommandInteraction } = require('discord.j
 async function execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
 
-    console.log(`${interaction.commandName} Started `);
     const e = new EmbedBuilder()
         .setTimestamp()
         .setTitle("NIEUWE ERROR")
@@ -15,12 +14,10 @@ async function execute(interaction) {
 
     if (!command) {
         console.log(interaction.client.commands);
-        return console.log("Test")
     }
 
     try {
         await command.execute(interaction.client, interaction);
-        console.log(command, "gestard");
     } catch (error) {
         e.addFields({ name: "Error", value: `${error}` })
         console.log(error);

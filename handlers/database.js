@@ -14,6 +14,7 @@ function query(sql, values, callback) {
             console.error('Error connecting to database: ' + err.stack);
             return;
         }
+        console.log("Database");
     });
 
     connection.query(sql, values, function(error, results, fields) {

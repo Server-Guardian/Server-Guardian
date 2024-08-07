@@ -13,7 +13,7 @@ const client = new Client({
             activities: [{
                 type: ActivityType.Custom,
                 name: "custom", // name is exposed through the API but not shown in the client for ActivityType.Custom
-                state: "MONSTEGANNG ON TOP!"
+                state: "Server Guardian!"
             }]
         }
 

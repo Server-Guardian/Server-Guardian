@@ -8,13 +8,28 @@ const client = require("../../src/botClient")
 async function execute(message) {
     if (message.author.bot) return;
     const linkRegex = /(http:\/\/|https:\/\/|www\.)/i;
+    if (linkRegex.test(message.content)) {
 
-    let logChannelId = "1265028864397283349"
-    let SupportID = "1263921359285649458"
+    
+    const query = require("../../handlers/database")
+query.query("SELECT * FROM setups WHERE Guildid = ?", [message.guild.id], async (err, results) => {
+            if (err) {
+                console.error('Fout bij het uitvoeren van de query:', err);
+                return;
+            }
+            let db = results
+            console.log(`Resu: ${Object(results)}`);
+            
+        const linkDetectorRole = db.Soort === 'support_role' ? db.Waarde : null;
+        const linkDetectorStatus = db.Soort === 'linkdetector_status' ? db.Waarde : null;
+        const logChannelId = db.Soort === 'logchannel' ? db.Waarde : db.Waarde
+
+
+    let SupportID = linkDetectorRole
     const logChannel = await client.channels.fetch(logChannelId);
 
 
-    if (linkRegex.test(message.content) & !(message.member.roles.cache.get(SupportID)) & !(message.channel.name.startsWith("ticket-"))) {
+    if (!(message.member.roles.cache.get(SupportID)) && !(message.channel.name.startsWith("ticket-")) && linkDetectorStatus === 1) {
         message.delete()
         const actionRow = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
@@ -66,6 +81,9 @@ async function execute(message) {
         await logChannel.send({ content: ``, components: [actionRow], embeds: [embed] });
     } else {
         return
+    }
+    
+})
     }
 }
 
